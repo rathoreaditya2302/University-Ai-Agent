@@ -1,0 +1,13 @@
+id,name,branch_code,degree,duration_years,fee_per_year,total_fee,eligibility,keywords
+1,Computer Science Engineering,CSE,B.Tech,4,300000,1200000,12th with PCM minimum 60%,"cse, computer science, btech cse, fee, computer"
+2,Electronics and Communication Engineering,ECE,B.Tech,4,250000,1000000,12th with PCM minimum 60%,"ece, electronics, communication, btech ece"
+3,Electrical and Electronics Engineering,EEE,B.Tech,4,230000,920000,12th with PCM minimum 60%,"eee, electrical, electronics"
+4,Mechanical Engineering,MECH,B.Tech,4,220000,880000,12th with PCM minimum 60%,"mechanical, mech, btech mechanical"
+5,Civil Engineering,CIVIL,B.Tech,4,200000,800000,12th with PCM minimum 60%,"civil, construction, btech civil"
+6,Information Technology,IT,B.Tech,4,280000,1120000,12th with PCM minimum 60%,"it, information technology, btech it"
+7,Artificial Intelligence and Data Science,AIDS,B.Tech,4,320000,1280000,12th with PCM minimum 60%,"aids, artificial intelligence, data science, ai"
+8,Artificial Intelligence and Machine Learning,AIML,B.Tech,4,320000,1280000,12th with PCM minimum 60%,"aiml, machine learning, ai, ml"
+9,Computer Science Engineering with specialization in Cybersecurity,CSE-CS,B.Tech,4,330000,1320000,12th with PCM minimum 60%,"cybersecurity, security, cse cybersecurity"
+10,Master of Business Administration,MBA,MBA,2,250000,500000,Graduation with minimum 50%,"mba, management, business, masters"
+11,Master of Computer Applications,MCA,MCA,2,180000,360000,BCA or B.Sc CS with minimum 50%,"mca, computer applications, masters"
+12,M.Tech Computer Science,CSE,M.Tech,2,200000,400000,B.Tech with minimum 60%,"mtech, masters, computer science, mtech cse"

@@ -1,0 +1,9 @@
+id,academic_year,semester,exam_type,start_date,end_date,notes
+1,2023-24,odd,midsem,15 September 2023,25 September 2023,Syllabus covers first half of semester
+2,2023-24,odd,endsem,10 November 2023,25 November 2023,Full syllabus covered
+3,2023-24,even,midsem,15 March 2024,25 March 2024,Syllabus covers first half of semester
+4,2023-24,even,endsem,10 May 2024,25 May 2024,Full syllabus covered
+5,2024-25,odd,midsem,15 September 2024,25 September 2024,Syllabus covers first half of semester
+6,2024-25,odd,endsem,10 November 2024,25 November 2024,Full syllabus covered
+7,2024-25,even,midsem,15 March 2025,25 March 2025,Syllabus covers first half of semester
+8,2024-25,even,endsem,10 May 2025,25 May 2025,Full syllabus covered
