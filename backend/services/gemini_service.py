@@ -8,6 +8,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 
+
 def get_gemini_answer(question: str, context: str) -> str:
     if not context:
         return "I don't have information on that. Please contact the university helpline at 1800-102-1525."

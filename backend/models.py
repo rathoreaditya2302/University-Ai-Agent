@@ -1,6 +1,11 @@
-from sqlalchemy import Column, Integer, String, Text, Float
-from database import Base
+# from sqlalchemy import Column, Integer, String, DateTime
+# from sqlalchemy.sql import func
 
+# from sqlalchemy import Column, Integer, String, Text, Float
+# from database import Base
+from sqlalchemy import Column, Integer, String, Text, Float, DateTime, Boolean, Enum, ForeignKey, UniqueConstraint, Index
+from sqlalchemy.sql import func
+from database import Base
 
 class Course(Base):
     __tablename__ = "courses"
@@ -14,6 +19,7 @@ class Course(Base):
     total_fee      = Column(Integer, nullable=False)
     eligibility    = Column(Text, nullable=True)
     keywords       = Column(Text, nullable=False)
+
 
 
 class ExamSchedule(Base):
@@ -59,3 +65,15 @@ class GeneralInfo(Base):
     key      = Column(String(200), nullable=False)
     value    = Column(Text, nullable=False)
     keywords = Column(Text, nullable=False)
+
+
+class User(Base):
+    __tablename__ = "users"
+ 
+    id              = Column(Integer, primary_key=True, index=True)
+    name            = Column(String, nullable=False)
+    email           = Column(String, unique=True, index=True, nullable=False)
+    hashed_password = Column(String, nullable=False)
+    program         = Column(String, nullable=True)
+    created_at      = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at      = Column(DateTime(timezone=True), onupdate=func.now())  

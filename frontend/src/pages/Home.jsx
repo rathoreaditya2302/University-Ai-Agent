@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import {
   Bot,
@@ -153,4 +152,5 @@ export default function Home() {
     </div>
   );
 }
+
 

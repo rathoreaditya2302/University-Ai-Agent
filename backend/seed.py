@@ -34,6 +34,7 @@ def seed():
         ))
     print("✅ Courses seeded")
 
+   
     # --- Exam Schedule ---
     for row in load_csv("exam_schedule.csv"):
         db.add(ExamSchedule(
