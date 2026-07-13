@@ -5,7 +5,6 @@ const AuthContext = createContext(null);
 
 const api = axios.create({ baseURL: "/api" });
 
-// Attach token to every request automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("srm_token");
   if (token) config.headers.Authorization = `Bearer ${token}`;
@@ -16,20 +15,19 @@ export function AuthProvider({ children }) {
   const [user, setUser]       = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On app start, restore session from localStorage
   useEffect(() => {
     const token    = localStorage.getItem("srm_token");
     const stored   = localStorage.getItem("srm_user");
     if (token && stored) {
       setUser(JSON.parse(stored));
-      // Verify token is still valid against the backend
+      
       api.get("/auth/me")
         .then((res) => {
           setUser(res.data);
           localStorage.setItem("srm_user", JSON.stringify(res.data));
         })
         .catch(() => {
-          // Token expired or invalid — clear session
+          
           localStorage.removeItem("srm_token");
           localStorage.removeItem("srm_user");
           setUser(null);
@@ -87,4 +85,4 @@ export function AuthProvider({ children }) {
 
 export const useAuth = () => useContext(AuthContext);
 
-export { api };   // export configured axios instance for other pages
+export { api };   

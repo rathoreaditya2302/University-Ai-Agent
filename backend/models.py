@@ -1,8 +1,3 @@
-# from sqlalchemy import Column, Integer, String, DateTime
-# from sqlalchemy.sql import func
-
-# from sqlalchemy import Column, Integer, String, Text, Float
-# from database import Base
 from sqlalchemy import Column, Integer, String, Text, Float, DateTime, Boolean, Enum, ForeignKey, UniqueConstraint, Index
 from sqlalchemy.sql import func
 from database import Base
@@ -19,7 +14,6 @@ class Course(Base):
     total_fee      = Column(Integer, nullable=False)
     eligibility    = Column(Text, nullable=True)
     keywords       = Column(Text, nullable=False)
-
 
 
 class ExamSchedule(Base):

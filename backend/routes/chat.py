@@ -24,10 +24,8 @@ TABLE_MAP = {
 def chat(request: ChatRequest, db: Session = Depends(get_db)):
     question = request.question.strip()
 
-    # step 1: detect category
     category = detect_category(question)
 
-    # step 2: fetch rows from correct table
     model_class = TABLE_MAP.get(category, GeneralInfo)
 
     if category in ("admissions", "general"):
@@ -35,10 +33,8 @@ def chat(request: ChatRequest, db: Session = Depends(get_db)):
     else:
         rows = db.query(model_class).all()
 
-    # step 3: build structured context
     context = build_context(category, rows)
 
-    # step 4: send to LLM
     answer = get_gemini_answer(question, context)
 
     return ChatResponse(

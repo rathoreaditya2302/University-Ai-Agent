@@ -1,9 +1,3 @@
-// // Analytics redirects to Dashboard which has full charts
-// import { Navigate } from "react-router-dom";
-// export default function Analytics() {
-//   return <Navigate to="/dashboard" replace />;
-// }
-
 import { useState } from "react";
 import {
   BarChart2, MessageSquare, Clock, TrendingUp, Star,

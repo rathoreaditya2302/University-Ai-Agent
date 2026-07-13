@@ -12,7 +12,6 @@ from models import User
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
-# ── Config ─────────────────────────────────────────────────────────────────
 SECRET_KEY = os.getenv("SECRET_KEY", "change-this-in-production-use-a-long-random-string")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
@@ -21,7 +20,6 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 
 
-# ── Schemas ─────────────────────────────────────────────────────────────────
 class RegisterRequest(BaseModel):
     name: str
     email: EmailStr
@@ -44,7 +42,6 @@ class UserResponse(BaseModel):
     program: str | None
 
 
-# ── Helpers ─────────────────────────────────────────────────────────────────
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
@@ -76,7 +73,6 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     return user
 
 
-# ── Routes ──────────────────────────────────────────────────────────────────
 @router.post("/register", response_model=TokenResponse)
 def register(body: RegisterRequest, db: Session = Depends(get_db)):
     existing = db.query(User).filter(User.email == body.email).first()
